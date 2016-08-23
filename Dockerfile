@@ -20,6 +20,6 @@ RUN echo 'alias apache-reload="service apache2 reload"' >> /root/.bash_aliases
 
 RUN apt-get update && apt-get -y autoremove && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-WORKDIR /var/www
-
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+
+WORKDIR /var/www
