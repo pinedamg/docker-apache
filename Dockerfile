@@ -14,9 +14,8 @@ RUN a2enmod headers
 EXPOSE 80
 EXPOSE 443
 
-RUN echo 'alias cd-www="cd /var/www"' >> /root/.bash_aliases
-RUN echo 'alias cd-html="cd /var/www/html"' >> /root/.bash_aliases
-RUN echo 'alias apache-reload="service apache2 reload"' >> /root/.bash_aliases
+COPY ./aliases /root/aliases
+RUN /root/aliases >> /root/.bash_aliases && rm -f /root/aliases
 
 RUN apt-get update && apt-get -y autoremove && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 

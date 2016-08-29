@@ -1,0 +1,5 @@
+#APACHE ALIASES
+alias cd-www='cd /var/www'
+alias cd-html='cd /var/www/html'
+alias apache-reload='service apache2 reload'
+alias cd-logs='cd /var/log/apache2'
